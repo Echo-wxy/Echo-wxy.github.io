@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xinyu Wang — PhD Candidate, Hefei University of Technology</title>
+<meta name="description" content="Xinyu Wang is a PhD candidate in Vehicle Engineering at Hefei University of Technology and a visiting PhD student at the University of Glasgow. Research interests: end-to-end autonomous driving, multi-modal perception, and vision-language models for driving.">
+<meta name="author" content="Xinyu Wang">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f5f3ee;
+  --bg-card: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a48;
+  --ink-mute: #8a8884;
+  --line: #d9d5cb;
+  --line-soft: #e8e4da;
+  --accent: #b8451f;
+  --accent-soft: #d96c3f;
+  --highlight: #f4d35e;
+  --max-w: 1180px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--accent); color: #fff; }
+
+a { color: var(--ink); text-decoration: none; transition: color .2s ease; }
+a:hover { color: var(--accent); }
+
+/* ===== Background texture ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(184, 69, 31, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(184, 69, 31, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ===== Top Nav ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 243, 238, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line-soft);
+}
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.nav-brand {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  font-style: italic;
+}
+.nav-brand strong { font-style: normal; font-weight: 500; }
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.nav-links a { color: var(--ink-soft); position: relative; }
+.nav-links a:hover { color: var(--accent); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+}
+
+/* ===== Hero ===== */
+.hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 88px 32px 72px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 64px;
+  align-items: start;
+}
+@media (max-width: 880px) {
+  .hero { grid-template-columns: 1fr; padding-top: 56px; gap: 40px; }
+  .hero-portrait { order: -1; max-width: 220px; }
+}
+
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-tag::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.hero h1 .accent {
+  font-style: italic;
+  font-family: 'Instrument Serif', serif;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.hero-lede {
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+.hero-lede strong { color: var(--ink); font-weight: 500; }
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-bottom: 32px;
+}
+.hero-meta-item { display: flex; align-items: center; gap: 8px; }
+.hero-meta-item svg { width: 14px; height: 14px; opacity: 0.7; }
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  color: var(--ink);
+  border-radius: 2px;
+  transition: all .2s ease;
+}
+.btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn svg { width: 14px; height: 14px; }
+
+.hero-portrait {
+  position: relative;
+}
+.hero-portrait::before {
+  content: '';
+  position: absolute;
+  inset: -12px -12px 12px 12px;
+  background: var(--accent);
+  z-index: 0;
+}
+.hero-portrait img {
+  position: relative;
+  width: 100%;
+  display: block;
+  filter: grayscale(15%) contrast(1.02);
+  z-index: 1;
+}
+.hero-portrait-caption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+  margin-top: 16px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* ===== Section base ===== */
+section.block {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 72px 32px;
+  border-top: 1px solid var(--line-soft);
+}
+section.block:last-of-type { border-bottom: 1px solid var(--line-soft); }
+
+.section-head {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+@media (max-width: 720px) {
+  .section-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+}
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.section-title em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+/* ===== About ===== */
+.about-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+}
+@media (max-width: 720px) { .about-body { grid-template-columns: 1fr; gap: 16px; } }
+.about-body .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.about-body p {
+  font-size: 18.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+  max-width: 720px;
+}
+.about-body p:last-child { margin-bottom: 0; }
+.about-body strong { color: var(--ink); font-weight: 500; }
+
+/* ===== Research interests grid ===== */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+}
+@media (max-width: 720px) {
+  .research-grid { grid-template-columns: 1fr; }
+}
+.research-cell {
+  background: var(--bg);
+  padding: 32px 28px;
+  position: relative;
+  transition: background .25s ease;
+}
+.research-cell:hover { background: var(--bg-card); }
+.research-cell .idx {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.research-cell h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.research-cell h3 em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+.research-cell p {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ===== Publications ===== */
+.pub-group { margin-bottom: 48px; }
+.pub-group:last-child { margin-bottom: 0; }
+.pub-group-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 24px;
+}
+
+.pub {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line-soft);
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+}
+@media (max-width: 720px) {
+  .pub { grid-template-columns: 1fr; gap: 6px; }
+}
+.pub:last-child { border-bottom: none; }
+.pub-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.pub-body { }
+.pub-title {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.pub-authors {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.pub-authors .me { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.pub-venue {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+.pub-venue::after {
+  content: '.';
+}
+.pub-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+  color: var(--ink-mute);
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: center;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.tag.first { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tag.oral { background: var(--accent); color: #fff; border-color: var(--accent); }
+.tag.sci { background: var(--bg-card); color: var(--ink); }
+.pub-links {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  gap: 14px;
+}
+@media (max-width: 720px) {
+  .pub-links { margin-top: 8px; }
+}
+.pub-links a {
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+.pub-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ===== Patents ===== */
+.patents {
+  display: grid;
+  gap: 20px;
+}
+.patent {
+  border: 1px solid var(--line-soft);
+  padding: 22px 24px;
+  background: var(--bg-card);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+@media (max-width: 720px) { .patent { grid-template-columns: 1fr; } }
+.patent h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.patent .meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-mute);
+  letter-spacing: 0.03em;
+}
+.patent-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* ===== Projects ===== */
+.projects { display: grid; gap: 24px; }
+.project {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.project:last-child { border-bottom: none; padding-bottom: 0; }
+@media (max-width: 720px) { .project { grid-template-columns: 1fr; gap: 8px; } }
+.project h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.project p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.project-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-mute);
+  text-align: right;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+@media (max-width: 720px) { .project-meta { text-align: left; } }
+.project-meta .lead {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+/* ===== Timeline (experience) ===== */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 8px; bottom: 8px;
+  width: 1px;
+  background: var(--line);
+}
+.tl-item {
+  position: relative;
+  padding-bottom: 32px;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -28px; top: 8px;
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.tl-item.current::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(184, 69, 31, 0.15);
+}
+.tl-when {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.tl-what {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.tl-where {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink-soft);
+}
+
+/* ===== Talks ===== */
+.talks { display: grid; gap: 0; }
+.talk {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: baseline;
+}
+@media (max-width: 720px) { .talk { grid-template-columns: 1fr; gap: 4px; } }
+.talk:last-child { border-bottom: none; }
+.talk-when {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--accent);
+}
+.talk-what {
+  font-family: 'Fraunces', serif;
+  font-size: 17.5px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+.talk-where {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+/* ===== Awards ===== */
+.awards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
+}
+@media (max-width: 720px) { .awards { grid-template-columns: 1fr; } }
+.award {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.award-name {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+.award-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-mute);
+  letter-spacing: 0.03em;
+}
+
+/* ===== Skills ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+@media (max-width: 720px) { .skills-grid { grid-template-columns: 1fr; } }
+.skill-group .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.skill-group .items {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* ===== Contact ===== */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 720px) { .contact { grid-template-columns: 1fr; gap: 32px; } }
+.contact-block .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+}
+.contact-block .value {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.contact-block .value a { border-bottom: 1px solid var(--line); }
+.contact-block .value a:hover { border-color: var(--accent); }
+.contact-block + .contact-block { margin-top: 28px; }
+
+/* ===== Footer ===== */
+footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-mute);
+  letter-spacing: 0.03em;
+}
+footer a { color: var(--ink-mute); border-bottom: 1px solid var(--line); }
+footer a:hover { color: var(--accent); }
+@media (max-width: 720px) {
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* ===== Subtle entry animation ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero > * { animation: fadeUp .6s ease both; }
+.hero-tag { animation-delay: .05s; }
+.hero h1 { animation-delay: .1s; }
+.hero-lede { animation-delay: .2s; }
+.hero-meta { animation-delay: .3s; }
+.hero-actions { animation-delay: .4s; }
+.hero-portrait { animation-delay: .15s; animation-duration: .8s; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Xinyu</strong> Wang</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div>
+    <div class="hero-tag">PhD Candidate · Vehicle Engineering</div>
+    <h1>Xinyu <span class="accent">Wang</span></h1>
+    <p class="hero-lede">
+      I work on <strong>end-to-end autonomous driving</strong>, multi-modal perception,
+      and <strong>vision-language models</strong> for intelligent vehicles. Currently a visiting
+      PhD student at the University of Glasgow.
+    </p>
+
+    <div class="hero-meta">
+      <span class="hero-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        Hefei University of Technology
+      </span>
+      <span class="hero-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        Visiting · University of Glasgow
+      </span>
+      <span class="hero-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        IEEE Graduate Student Member
+      </span>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:xinyuwang@mail.hfut.edu.cn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+      <a class="btn" href="https://orcid.org/0009-0002-1239-6498" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 8v8M8 8h.01M16 16V11M16 11c0-1.66-1.34-3-3-3s-3 1.34-3 3"/></svg>
+        ORCID
+      </a>
+      <a class="btn" href="https://github.com/Echo-wxy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="assets/CV-XinyuWang.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        CV (PDF)
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-portrait">
+    <img src="assets/headshot.jpg" alt="Portrait of Xinyu Wang">
+    <div class="hero-portrait-caption">Hefei · Glasgow · 2026</div>
+  </div>
+</header>
+
+<!-- ===== ABOUT ===== -->
+<section class="block" id="about">
+  <div class="section-head">
+    <div class="section-num">§ 01 / About</div>
+    <h2 class="section-title">A short <em>bio</em></h2>
+  </div>
+  <div class="about-body">
+    <div class="label">Biography</div>
+    <div>
+      <p>
+        I am a <strong>PhD candidate in Vehicle Engineering</strong> at the
+        School of Automotive and Transportation Engineering, Hefei University of Technology (HFUT).
+        From November 2025 to November 2026, I am a <strong>visiting PhD student</strong> at the
+        James Watt School of Engineering, University of Glasgow.
+      </p>
+      <p>
+        My research sits at the intersection of <strong>intelligent vehicles</strong> and
+        <strong>modern machine learning</strong> — building perception, planning and
+        control systems that connect raw multi-sensor data to driving decisions, and
+        increasingly, exploring how vision-language models and multi-agent systems can
+        make these decisions more transparent and trustworthy.
+      </p>
+      <p>
+        I was admitted to HFUT&apos;s combined M.S.-Ph.D. program in 2021, and have worked
+        at the Anhui Intelligent Vehicle Technology Laboratory throughout. I am a Graduate
+        Student Member of the IEEE Robotics and Automation Society and Young Professionals.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEARCH INTERESTS ===== -->
+<section class="block" id="research">
+  <div class="section-head">
+    <div class="section-num">§ 02 / Research</div>
+    <h2 class="section-title">Four lines of <em>inquiry</em></h2>
+  </div>
+  <div class="research-grid">
+    <div class="research-cell">
+      <div class="idx">01</div>
+      <h3>End-to-End <em>Autonomous Driving</em></h3>
+      <p>Learning-based driving stacks that map raw sensor streams directly to control,
+      with a focus on interpretability and safe behaviour in long-tail scenarios.</p>
+    </div>
+    <div class="research-cell">
+      <div class="idx">02</div>
+      <h3>Multi-modal <em>Perception</em></h3>
+      <p>Fusion of LiDAR, camera and IMU for 3D object detection — including cross-modal
+      transformer fusion, sensor co-calibration, and bird&apos;s-eye-view representations.</p>
+    </div>
+    <div class="research-cell">
+      <div class="idx">03</div>
+      <h3>Planning &amp; <em>Control</em></h3>
+      <p>Path planning and longitudinal control for articulated vehicles and unmanned mining
+      machines; smoothing, kinematic constraints, and real-vehicle deployment.</p>
+    </div>
+    <div class="research-cell">
+      <div class="idx">04</div>
+      <h3>VLMs &amp; <em>Agents</em></h3>
+      <p>Vision-language models and role-specialised multi-agent systems applied to
+      driving and broader decision-making tasks. An emerging direction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PUBLICATIONS ===== -->
+<section class="block" id="publications">
+  <div class="section-head">
+    <div class="section-num">§ 03 / Publications</div>
+    <h2 class="section-title">Selected <em>papers</em></h2>
+  </div>
+
+  <div class="pub-group">
+    <div class="pub-group-title">Journal Articles</div>
+
+    <article class="pub">
+      <div class="pub-year">2024</div>
+      <div class="pub-body">
+        <h3 class="pub-title">AFMCT: Adaptive Fusion Module Based on Cross-Modal Transformer Block for 3D Object Detection</h3>
+        <div class="pub-authors">Bingli Zhang, <span class="me">Yixin Wang</span>, Chengbiao Zhang, Junzhao Jiang, Zehao Pan, Jin Cheng, Yangyang Zhang, <span class="me">Xinyu Wang</span>, Chenglei Yang, Yanhui Wang</div>
+        <div class="pub-venue">Machine Vision and Applications, vol. 35, no. 40</div>
+        <div class="pub-note">
+          <span class="tag sci">SCI</span>
+          <span>Co-author · first author is the supervisor</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1007/s00138-024-01509-3" target="_blank" rel="noopener">DOI ↗</a>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2024</div>
+      <div class="pub-body">
+        <h3 class="pub-title">Path Planning for Unmanned Load–Haul–Dump Machines Based on a VHF_A* Algorithm</h3>
+        <div class="pub-authors">Bingli Zhang, Yangyan Zhang, et al., <span class="me">Xinyu Wang</span></div>
+        <div class="pub-venue">Proc. IMechE Part C: Journal of Mechanical Engineering Science</div>
+        <div class="pub-note">
+          <span class="tag sci">SCI</span>
+          <span>Co-author · first author is the supervisor</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1177/09544062241228391" target="_blank" rel="noopener">DOI ↗</a>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2024</div>
+      <div class="pub-body">
+        <h3 class="pub-title">Research on Single-Stage Multi-Task YOLO-Parking Algorithm Based on Obstacle and Parking Space Detection</h3>
+        <div class="pub-authors">Bingli Zhang, Yanhui Wang, Zehao Pan, Yixin Wang, Chenglei Yang, <span class="me">Xinyu Wang</span></div>
+        <div class="pub-venue">Journal of Hefei University of Technology (Natural Science), 47(1)</div>
+        <div class="pub-note">
+          <span class="tag">EI</span>
+          <span>Co-author · first author is the supervisor</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.3969/j.issn.1003-5060.2024.01.001" target="_blank" rel="noopener">DOI ↗</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="pub-group">
+    <div class="pub-group-title">Conference Papers</div>
+
+    <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">AffectMind: Proactive Knowledge Grounding with Affective Multimodal Signals for Aligned Marketing Dialogue</h3>
+        <div class="pub-authors"><span class="me">Xinyu Wang</span>, Xiaomin Zhao, Yifei Kang, Zhihao Lin, Xiang Luo, Zhang Chengbiao, Jin Cheng, Yixin Wang, Yangyang Zhang, Ernie Tian, Zhiguo Tao, Xiaofei Han, Xiaotong Ding</div>
+        <div class="pub-venue">ICLR 2026 Workshop on Multimodal Algorithmic Reasoning (MALGAI)</div>
+        <div class="pub-note">
+          <span class="tag first">First author</span>
+          <span class="tag">Accept · Poster</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://openreview.net/forum?id=" target="_blank" rel="noopener">OpenReview ↗</a>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">LLM-VR: A Generative Framework for Biometric-Aware Personalization in Extended Reality</h3>
+        <div class="pub-authors">Bingli Zhang, <span class="me">Xinyu Wang</span>, Xingyu Liu, Guozhong Zhang, Yifan Wang, Yangyang Zhang, Zhang Chengbiao, Yixin Wang, Jin Cheng, Gan Shen, Zhen Tian, Zhiguo Tao</div>
+        <div class="pub-venue">CVPR 2026 Workshop on Generative XR &amp; Identity (GenXR-ID)</div>
+        <div class="pub-note">
+          <span class="tag">Second author · first author is the supervisor</span>
+          <span class="tag oral">Accept · Oral</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://openreview.net/forum?id=" target="_blank" rel="noopener">OpenReview ↗</a>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">Consensus Matrix: A Role-Specialized Multi-Agent Framework for Structured Collaborative Decision-Making in Agentic Visual Media Workflows</h3>
+        <div class="pub-authors">Bingli Zhang, <span class="me">Xinyu Wang</span>, Hsiang Lun Kao, Guozhong Zhang, Yijian Wu, Chenkai Gao, Yifan Wang, Zhengda, Ning Lyu, Kaijie Chen</div>
+        <div class="pub-venue">CVPR 2026 Workshop on Agentic Audiovisual Media (AAVM)</div>
+        <div class="pub-note">
+          <span class="tag">Second author · first author is the supervisor</span>
+          <span class="tag oral">Accept · Oral</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://openreview.net/forum?id=" target="_blank" rel="noopener">OpenReview ↗</a>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">Physics-Guided Multimodal Multi-Agent Learning for Intelligent Transportation Systems</h3>
+        <div class="pub-authors">Zhen Tian, Yaqiong Zhang, Zhihao Lin, Fujiang Yuan, Yijun Lu, Wangjie Lang, <span class="me">Xinyu Wang</span>, Ning Lyu, Zhiguo Tao, Kaijie Chen, Aaron Wang</div>
+        <div class="pub-venue">ICLR 2026 Workshop AIWILD</div>
+        <div class="pub-note">
+          <span class="tag">Co-author</span>
+          <span>Published</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://openreview.net/forum?id=" target="_blank" rel="noopener">OpenReview ↗</a>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">Multi-Agent Collaborative Framework for Intelligent IT Operations: An AOI System with Context-Aware Compression and Dynamic Task Scheduling</h3>
+        <div class="pub-authors">Yixin Wang, Yingxin Su, Bingli Zhang, Zishan Bai, Guozhong Zhang, Junzhao Jiang, <span class="me">Xinyu Wang</span>, Zhang Chengbiao, Yifan Wang, Xiang Luo, Jin Cheng, Ernie Tian, Xiaotong Ding</div>
+        <div class="pub-venue">ICLR 2026 Workshop MemAgents</div>
+        <div class="pub-note">
+          <span class="tag">Co-author</span>
+          <span>Published</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://openreview.net/forum?id=" target="_blank" rel="noopener">OpenReview ↗</a>
+      </div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">Cognitive Digital Twin Framework: Modeling and Real-Time Decision Making</h3>
+        <div class="pub-authors">Yangyang Zhang, Mengtong Li, <span class="me">Xinyu Wang</span>, Zhihao Lin, Xiang Luo, Ernie Tian, Ning Lyu, Zhiguo Tao, Xiaotong Ding, Chuanzhen Wang</div>
+        <div class="pub-venue">ICLR 2026 Workshop on World Models</div>
+        <div class="pub-note">
+          <span class="tag">Third author</span>
+          <span>Published</span>
+        </div>
+      </div>
+      <div class="pub-links">
+        <a href="https://openreview.net/forum?id=" target="_blank" rel="noopener">OpenReview ↗</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="pub-group">
+    <div class="pub-group-title">Patents (Granted)</div>
+    <div class="patents">
+      <div class="patent">
+        <div>
+          <h4>A Longitudinal Control Method for Intelligent Vehicles Based on Dynamic Feature Learning Optimization</h4>
+          <div class="meta">Patent No. ZL202511097394.1 · Granted 2025</div>
+        </div>
+        <div class="patent-status">Granted</div>
+      </div>
+      <div class="patent">
+        <div>
+          <h4>A Target Detection Method Based on LiDAR and Machine Vision Fusion</h4>
+          <div class="meta">Patent No. CN 115032651 B · Granted Apr 2024</div>
+        </div>
+        <div class="patent-status">Granted</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEARCH PROJECTS ===== -->
+<section class="block" id="projects">
+  <div class="section-head">
+    <div class="section-num">§ 04 / Projects</div>
+    <h2 class="section-title">Research <em>projects</em></h2>
+  </div>
+  <div class="projects">
+    <div class="project">
+      <div>
+        <h4>Fully Automated Parking System Based on High-Accuracy Environmental Perception and High-Precision Localization</h4>
+        <p>Yangtze River Delta Joint Research Programme. Trajectory planning and control strategy optimisation for fully automated parking, with system integration meeting functional-safety and AUTOSAR requirements.</p>
+      </div>
+      <div class="project-meta">
+        Yangtze River Delta<br>
+        Joint Programme
+      </div>
+    </div>
+
+    <div class="project">
+      <div>
+        <h4>High-Accuracy Environment Recognition and Parking Trajectory Planning &amp; Control in Complex Environments</h4>
+        <p>National-level research project on perception, planning, and control for parking systems in cluttered, dynamic urban scenarios.</p>
+      </div>
+      <div class="project-meta">National Level</div>
+    </div>
+
+    <div class="project">
+      <div>
+        <h4>Heterogeneous Multi-Source Fusion and Adaptive Environmental Perception Based on Camera, LiDAR and Radar</h4>
+        <p>Provincial-level research on sensor-fusion architectures and adaptive perception for autonomous driving. Outputs include cross-modal transformer fusion modules and joint calibration methods.</p>
+      </div>
+      <div class="project-meta">Provincial Level</div>
+    </div>
+
+    <div class="project">
+      <div>
+        <h4>Intelligent Monitoring and Active Warning System for Hazards in Vehicle Cabin</h4>
+        <p>National College Students&apos; Innovation and Entrepreneurship Training Program. Designed an integrated monitoring-processing-warning architecture; led sensor integration, embedded firmware, and PCB layout. Resulted in 1 publication and 1 granted patent.</p>
+      </div>
+      <div class="project-meta">
+        MOE, China · 2017–2020<br>
+        <span class="lead">Project Leader</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TALKS ===== -->
+<section class="block" id="talks">
+  <div class="section-head">
+    <div class="section-num">§ 05 / Talks</div>
+    <h2 class="section-title">Invited <em>talks</em></h2>
+  </div>
+  <div class="talks">
+    <div class="talk">
+      <div class="talk-when">2023.10</div>
+      <div>
+        <div class="talk-what">Invited Speaker — Perception Fusion Algorithms for High-Level Autonomous Driving</div>
+        <div class="talk-where">2023 National Graduate Academic Forum on Intelligent Electric Vehicles · School of Vehicle and Mobility, Tsinghua University</div>
+      </div>
+    </div>
+    <div class="talk">
+      <div class="talk-when">2023</div>
+      <div>
+        <div class="talk-what">Speaker — National Science &amp; Technology Programme Achievements Roadshow</div>
+        <div class="talk-where">Hefei–Wuhu–Bengbu High-Tech Zone Roadshow on Next-Generation Information Technologies</div>
+      </div>
+    </div>
+    <div class="talk">
+      <div class="talk-when">2023</div>
+      <div>
+        <div class="talk-what">Invited Guest — 2nd Forum on Industrial Chain &amp; Innovation Chain Collaborative Development</div>
+        <div class="talk-where">Featuring keynote by Academician Keqiang Li (Tsinghua)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="block" id="experience">
+  <div class="section-head">
+    <div class="section-num">§ 06 / Experience</div>
+    <h2 class="section-title">Education &amp; <em>positions</em></h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item current">
+      <div class="tl-when">2025.11 — 2026.11</div>
+      <div class="tl-what">Visiting PhD Student</div>
+      <div class="tl-where">James Watt School of Engineering, University of Glasgow</div>
+    </div>
+    <div class="tl-item current">
+      <div class="tl-when">2021.09 — Present</div>
+      <div class="tl-what">PhD in Vehicle Engineering · combined M.S.–Ph.D. programme</div>
+      <div class="tl-where">School of Automotive and Transportation Engineering, Hefei University of Technology</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">2016.09 — 2020.06</div>
+      <div class="tl-what">B.Eng. in Vehicle Engineering</div>
+      <div class="tl-where">School of Automotive and Transportation Engineering, Hefei University of Technology</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AWARDS ===== -->
+<section class="block" id="awards">
+  <div class="section-head">
+    <div class="section-num">§ 07 / Awards</div>
+    <h2 class="section-title">Honours &amp; <em>awards</em></h2>
+  </div>
+  <div class="awards">
+    <div class="award">
+      <div class="award-name">IEEE Graduate Student Member</div>
+      <div class="award-meta">RAS · Young Professionals · 2026</div>
+    </div>
+    <div class="award">
+      <div class="award-name">First-Class Academic Scholarship</div>
+      <div class="award-meta">Hefei University of Technology · 2022–2023</div>
+    </div>
+    <div class="award">
+      <div class="award-name">National Endeavor Scholarship</div>
+      <div class="award-meta">国家励志奖学金 · 2017–2018</div>
+    </div>
+    <div class="award">
+      <div class="award-name">Project Leader — National Innovation &amp; Entrepreneurship Training Program</div>
+      <div class="award-meta">Ministry of Education, China · 2017</div>
+    </div>
+    <div class="award">
+      <div class="award-name">Class Monitor &amp; Counselor Assistant</div>
+      <div class="award-meta">PhD Class of 002, HFUT</div>
+    </div>
+    <div class="award">
+      <div class="award-name">Outstanding Student Cadre</div>
+      <div class="award-meta">Hefei University of Technology</div>
+    </div>
+    <div class="award">
+      <div class="award-name">Merit Student (Sānhǎo)</div>
+      <div class="award-meta">Hefei University of Technology · multiple years</div>
+    </div>
+    <div class="award">
+      <div class="award-name">Cumulative GPA</div>
+      <div class="award-meta">93.58 / 100 — combined undergraduate &amp; doctoral</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="block" id="skills">
+  <div class="section-head">
+    <div class="section-num">§ 08 / Skills</div>
+    <h2 class="section-title">Toolkit</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="label">Programming</div>
+      <div class="items">Python · C · MATLAB</div>
+    </div>
+    <div class="skill-group">
+      <div class="label">Simulation &amp; Modelling</div>
+      <div class="items">Simulink · CarSim · ROS</div>
+    </div>
+    <div class="skill-group">
+      <div class="label">Languages</div>
+      <div class="items">Chinese (native)<br>English (CET-6 · PETS-5/WSK)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="block" id="contact">
+  <div class="section-head">
+    <div class="section-num">§ 09 / Contact</div>
+    <h2 class="section-title">Get in <em>touch</em></h2>
+  </div>
+  <div class="contact">
+    <div>
+      <div class="contact-block">
+        <div class="label">Primary Email · HFUT</div>
+        <div class="value"><a href="mailto:xinyuwang@mail.hfut.edu.cn">xinyuwang@mail.hfut.edu.cn</a></div>
+      </div>
+      <div class="contact-block">
+        <div class="label">Glasgow Email</div>
+        <div class="value"><a href="mailto:3173751W@student.gla.ac.uk">3173751W@student.gla.ac.uk</a></div>
+      </div>
+      <div class="contact-block">
+        <div class="label">Profiles</div>
+        <div class="value">
+          <a href="https://orcid.org/0009-0002-1239-6498" target="_blank" rel="noopener">ORCID</a> ·
+          <a href="https://github.com/Echo-wxy" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-block">
+        <div class="label">Mailing Address</div>
+        <div class="value">
+          School of Automotive and Transportation Engineering<br>
+          Hefei University of Technology<br>
+          193 Tunxi Road, Baohe District<br>
+          Hefei 230009, Anhui, China
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="label">Currently visiting</div>
+        <div class="value">
+          James Watt School of Engineering<br>
+          University of Glasgow, Glasgow, Scotland, UK
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Xinyu Wang · Built with care · Last updated May 2026</div>
+  <div>
+    <a href="https://orcid.org/0009-0002-1239-6498" target="_blank" rel="noopener">ORCID</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Echo-wxy" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>
