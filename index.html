@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xinyu Wang — PhD Candidate, Hefei University of Technology</title>
-<meta name="description" content="Xinyu Wang is a PhD candidate in Vehicle Engineering at Hefei University of Technology and a visiting PhD student at the University of Glasgow. Research interests: end-to-end autonomous driving, multi-modal perception, and vision-language models for driving.">
+<meta name="description" content="Xinyu Wang is a PhD candidate in Vehicle Engineering at Hefei University of Technology and a visiting PhD student at the University of Glasgow. Research interests: safety-critical motion planning and control for automated vehicles, risk-aware MPC, safe reinforcement learning, and multi-sensor perception.">
 <meta name="author" content="Xinyu Wang">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -742,8 +742,9 @@ footer a:hover { color: var(--accent); }
     <div class="hero-tag">PhD Candidate · Vehicle Engineering</div>
     <h1>Xinyu <span class="accent">Wang</span></h1>
     <p class="hero-lede">
-      I work on <strong>end-to-end autonomous driving</strong>, multi-modal perception,
-      and <strong>vision-language models</strong> for intelligent vehicles. Currently a visiting
+      I work on <strong>safety-critical motion planning and control</strong> for automated
+      vehicles: risk-aware MPC, interactive trajectory planning and safe reinforcement learning,
+      validated on a real test vehicle and a hardware-in-the-loop bench. Currently a visiting
       PhD student at the University of Glasgow.
     </p>
 
@@ -801,14 +802,18 @@ footer a:hover { color: var(--accent); }
         I am a <strong>PhD candidate in Vehicle Engineering</strong> at the
         School of Automotive and Transportation Engineering, Hefei University of Technology (HFUT).
         From November 2025 to November 2026, I am a <strong>visiting PhD student</strong> at the
-        James Watt School of Engineering, University of Glasgow.
+        James Watt School of Engineering, University of Glasgow, in the Interactive Versatile
+        Automation group hosted by Dr Chongfeng Wei.
       </p>
       <p>
-        My research sits at the intersection of <strong>intelligent vehicles</strong> and
-        <strong>modern machine learning</strong> — building perception, planning and
-        control systems that connect raw multi-sensor data to driving decisions, and
-        increasingly, exploring how vision-language models and multi-agent systems can
-        make these decisions more transparent and trustworthy.
+        My doctoral research embeds <strong>explicit structural priors</strong> (orderings and
+        couplings that are known before an algorithm runs) into the planning–control stack:
+        type-weighted perceptual risk fields inside LPV-MPC, style-controllable lane-change
+        planning with tail-margin safety objectives, and road-graph spectral embeddings for
+        reinforcement learning with control-barrier-function safety filtering. My master&apos;s-stage
+        work on multi-sensor fusion and LiDAR–camera–IMU calibration gives me hands-on coverage of
+        the full perception–planning–control pipeline, and I took part in building and debugging
+        our lab&apos;s automated test vehicle.
       </p>
       <p>
         I was admitted to HFUT&apos;s combined M.S.-Ph.D. program in 2021, and have worked
@@ -828,27 +833,27 @@ footer a:hover { color: var(--accent); }
   <div class="research-grid">
     <div class="research-cell">
       <div class="idx">01</div>
-      <h3>End-to-End <em>Autonomous Driving</em></h3>
-      <p>Learning-based driving stacks that map raw sensor streams directly to control,
-      with a focus on interpretability and safe behaviour in long-tail scenarios.</p>
+      <h3>Risk-Aware <em>Planning &amp; Control</em></h3>
+      <p>Perceptual risk fields embedded in linear-parameter-varying MPC, trajectory tracking and
+      longitudinal control, verified on a hardware-in-the-loop bench and a real test vehicle.</p>
     </div>
     <div class="research-cell">
       <div class="idx">02</div>
-      <h3>Multi-modal <em>Perception</em></h3>
-      <p>Fusion of LiDAR, camera and IMU for 3D object detection — including cross-modal
-      transformer fusion, sensor co-calibration, and bird&apos;s-eye-view representations.</p>
+      <h3>Interactive <em>Trajectory Planning</em></h3>
+      <p>Style-controllable lane-change planning with provable order preservation between driving
+      style and tail safety margins; automated parking planning and control.</p>
     </div>
     <div class="research-cell">
       <div class="idx">03</div>
-      <h3>Planning &amp; <em>Control</em></h3>
-      <p>Path planning and longitudinal control for articulated vehicles and unmanned mining
-      machines; smoothing, kinematic constraints, and real-vehicle deployment.</p>
+      <h3>Safe <em>Learning-Based Control</em></h3>
+      <p>Reinforcement learning on road-graph spectral state representations with control barrier
+      function filtering for forward invariance and real-time deployment.</p>
     </div>
     <div class="research-cell">
       <div class="idx">04</div>
-      <h3>VLMs &amp; <em>Agents</em></h3>
-      <p>Vision-language models and role-specialised multi-agent systems applied to
-      driving and broader decision-making tasks. An emerging direction.</p>
+      <h3>Perception &amp; <em>End-to-End Driving</em></h3>
+      <p>LiDAR–camera–IMU fusion and joint calibration, and a structure–capability analysis of
+      end-to-end autonomous driving architectures.</p>
     </div>
   </div>
 </section>
@@ -864,10 +869,55 @@ footer a:hover { color: var(--accent); }
     <div class="pub-group-title">Journal Articles</div>
 
     <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">End-to-End Autonomous Driving: An Analytical Survey Through the Structure–Capability Framework</h3>
+        <div class="pub-authors"><span class="me">Xinyu Wang</span>, et al.</div>
+        <div class="pub-venue">IEEE Transactions on Intelligent Transportation Systems</div>
+        <div class="pub-note">
+          <span class="tag first">First author</span>
+          <span class="tag">Accepted</span>
+          <span>SCI</span>
+        </div>
+      </div>
+      <div class="pub-links"></div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">PRIMO: Human-Inspired Perceptual Risk Fields for Coupled Risk Perception and Motion Control in Automated Driving</h3>
+        <div class="pub-authors"><span class="me">Xinyu Wang</span>, et al.</div>
+        <div class="pub-venue">IEEE Transactions on Vehicular Technology</div>
+        <div class="pub-note">
+          <span class="tag first">First author</span>
+          <span class="tag">Under revision</span>
+          <span>SCI</span>
+        </div>
+      </div>
+      <div class="pub-links"></div>
+    </article>
+
+    <article class="pub">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <h3 class="pub-title">Style-Controllable Lane-Change Trajectory Planning via an Order-Aware Tail-Margin Safety Objective</h3>
+        <div class="pub-authors"><span class="me">Xinyu Wang</span>, et al.</div>
+        <div class="pub-venue">IEEE Transactions on Intelligent Transportation Systems</div>
+        <div class="pub-note">
+          <span class="tag first">First author</span>
+          <span class="tag">Under review</span>
+          <span>SCI</span>
+        </div>
+      </div>
+      <div class="pub-links"></div>
+    </article>
+
+    <article class="pub">
       <div class="pub-year">2024</div>
       <div class="pub-body">
         <h3 class="pub-title">AFMCT: Adaptive Fusion Module Based on Cross-Modal Transformer Block for 3D Object Detection</h3>
-        <div class="pub-authors">Bingli Zhang, <span class="me">Yixin Wang</span>, Chengbiao Zhang, Junzhao Jiang, Zehao Pan, Jin Cheng, Yangyang Zhang, <span class="me">Xinyu Wang</span>, Chenglei Yang, Yanhui Wang</div>
+        <div class="pub-authors">Bingli Zhang, Yixin Wang, Chengbiao Zhang, Junzhao Jiang, Zehao Pan, Jin Cheng, Yangyang Zhang, <span class="me">Xinyu Wang</span>, Chenglei Yang, Yanhui Wang</div>
         <div class="pub-venue">Machine Vision and Applications, vol. 35, no. 40</div>
         <div class="pub-note">
           <span class="tag sci">SCI</span>
@@ -1088,6 +1138,13 @@ footer a:hover { color: var(--accent); }
   </div>
   <div class="talks">
     <div class="talk">
+      <div class="talk-when">2026</div>
+      <div>
+        <div class="talk-what">Oral Presentation — IEEE International Conference on Robotics and Automation (ICRA 2026)</div>
+        <div class="talk-where">Vienna, Austria · also supported conference organisation</div>
+      </div>
+    </div>
+    <div class="talk">
       <div class="talk-when">2023.10</div>
       <div>
         <div class="talk-what">Invited Speaker — Perception Fusion Algorithms for High-Level Autonomous Driving</div>
@@ -1121,12 +1178,17 @@ footer a:hover { color: var(--accent); }
     <div class="tl-item current">
       <div class="tl-when">2025.11 — 2026.11</div>
       <div class="tl-what">Visiting PhD Student</div>
-      <div class="tl-where">James Watt School of Engineering, University of Glasgow</div>
+      <div class="tl-where">James Watt School of Engineering, University of Glasgow · host: Dr Chongfeng Wei</div>
     </div>
     <div class="tl-item current">
       <div class="tl-when">2021.09 — Present</div>
       <div class="tl-what">PhD in Vehicle Engineering · combined M.S.–Ph.D. programme</div>
       <div class="tl-where">School of Automotive and Transportation Engineering, Hefei University of Technology</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">2025.08 — 2025.09</div>
+      <div class="tl-what">Seconded Staff (Policy Research)</div>
+      <div class="tl-where">Major Affairs Division, Anhui Provincial Department of Science and Technology</div>
     </div>
     <div class="tl-item">
       <div class="tl-when">2016.09 — 2020.06</div>
@@ -1146,6 +1208,14 @@ footer a:hover { color: var(--accent); }
     <div class="award">
       <div class="award-name">IEEE Graduate Student Member</div>
       <div class="award-meta">RAS · Young Professionals · 2026</div>
+    </div>
+    <div class="award">
+      <div class="award-name">National Second Prize, National College Computer Competency Challenge</div>
+      <div class="award-meta">2024</div>
+    </div>
+    <div class="award">
+      <div class="award-name">Qiantu Intelligent Driving Scholarship</div>
+      <div class="award-meta">2024</div>
     </div>
     <div class="award">
       <div class="award-name">First-Class Academic Scholarship</div>
@@ -1173,7 +1243,7 @@ footer a:hover { color: var(--accent); }
     </div>
     <div class="award">
       <div class="award-name">Cumulative GPA</div>
-      <div class="award-meta">93.58 / 100 — combined undergraduate &amp; doctoral</div>
+      <div class="award-meta">93.58 / 100 — combined undergraduate &amp; master&apos;s stage</div>
     </div>
   </div>
 </section>
@@ -1187,11 +1257,11 @@ footer a:hover { color: var(--accent); }
   <div class="skills-grid">
     <div class="skill-group">
       <div class="label">Programming</div>
-      <div class="items">Python · C · MATLAB</div>
+      <div class="items">Python (PyTorch) · C/C++ · MATLAB</div>
     </div>
     <div class="skill-group">
       <div class="label">Simulation &amp; Modelling</div>
-      <div class="items">Simulink · CarSim · ROS</div>
+      <div class="items">Simulink · CarSim co-simulation · ROS · HIL bench · real-vehicle debugging</div>
     </div>
     <div class="skill-group">
       <div class="label">Languages</div>
@@ -1246,7 +1316,7 @@ footer a:hover { color: var(--accent); }
 </section>
 
 <footer>
-  <div>© 2026 Xinyu Wang · Built with care · Last updated May 2026</div>
+  <div>© 2026 Xinyu Wang · Built with care · Last updated October 2026</div>
   <div>
     <a href="https://orcid.org/0009-0002-1239-6498" target="_blank" rel="noopener">ORCID</a>
     &nbsp;·&nbsp;
